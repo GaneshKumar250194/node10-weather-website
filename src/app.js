@@ -4,6 +4,8 @@ const hbs = require('hbs');
 
 const app = express();
 
+const port = process.env.PORT || 3000
+
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
 const { deflateRawSync } = require('zlib');
@@ -99,6 +101,6 @@ app.get('/help/*', (req, res) => {
     })
 })
 
-app.listen(3000, (req, res) => {
-    console.log('Server is up on port 3000')
+app.listen(port, (req, res) => {
+    console.log('Server is up on port ' + port)
 });
